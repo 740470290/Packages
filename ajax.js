@@ -1,18 +1,21 @@
 export default (function () {
+  const f = 'http://172.17.14.250/api'
   return {
     get: function (u, c) {
-      const x = new XMLHttpRequest()
-      x.open('GET', u, true)
+      let x = new XMLHttpRequest()
+      x.open('GET', f + u, true)
+      x.withCredentials = true
       x.send()
       x.onreadystatechange = function () {
         if (x.readyState === 4) {
           c(JSON.parse(x.response))
+          x = null
         }
       }
     },
     post: function (u, d, c) {
-      const x = new XMLHttpRequest()
-      x.open('POST', u, true)
+      let x = new XMLHttpRequest()
+      x.open('POST', f + u, true)
       x.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
       let s = ''
       for (let i in d) {
@@ -22,6 +25,7 @@ export default (function () {
       x.onreadystatechange = function () {
         if (x.readyState === 4 && x.status === 200) {
           c(JSON.parse(x.response))
+          x = null
         }
       }
     },
