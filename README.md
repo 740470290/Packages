@@ -10,4 +10,4 @@ $.post("http://172.17.14.250/",{id:1,name:'tom'},function (res) {
     console.log(res)
 })
 ```
-123
+
