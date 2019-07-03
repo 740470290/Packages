@@ -7,8 +7,8 @@
 url: 配置全局地址,用于单页应用.多页进入源码配置  
 方法:
 ```javascript
-get
 /**
+   * get
    * @param url
    * @param data (可选)
    * @param callback 返回对象类型
@@ -16,17 +16,17 @@ get
 ajax.get('/',{id:1,name:'tom'},function(res) {
   console.log(res)
 })
-post
 /**
-   * @param url
+   * post
+   * @param url.
    * @param data 有两种类型,一是对象,二是表单document.forms[0],表单可以实现文件上传
    * @param callback 返回对象类型
    */
 ajax.post('/',{id:1,name:'tom'},function(res) {
   console.log(res)
 })
-jsonp
 /**
+   * jsonp
    * @param url
    * @param callback 返回对象类型
    */
