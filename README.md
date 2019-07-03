@@ -3,8 +3,10 @@
 ## window.ajax=(function () {return {...需要返回的方法}})()
 ## 区别于window.ajax={},这个里面的所有属性,方法都暴露出去了,然而使用闭包的模式,可以控制暴露出去的内容.更加合理
 ### ajax,example
-url 配置全局地址,用于单页应用.多页进入源码配置
+属性:  
+url: 配置全局地址,用于单页应用.多页进入源码配置  
 方法:
+```javascript
 get
 /**
    * @param url
@@ -32,19 +34,5 @@ ajax.jsonp('/', function(res) {
   console.log(res)
 })
 
-
-
-```sh
-$.get("http://172.17.14.250/",function (res) {
-    console.log(res)
-})
-
-$.post("http://172.17.14.250/",{id:1,name:'tom'},function (res) {
-    console.log(res)
-})
-
-$.jsonp("http://172.17.14.250/",function (res) {
-    console.log(res)
-})
 ```
 
